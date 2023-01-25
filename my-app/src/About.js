@@ -1,9 +1,13 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
 
-export default function About() {
+export default function Articles() {
     return (
-        <div className='container'>
-            <h1>Halaman About</h1>
-        </div>
+        <>
+            <Container>
+                <h1>About</h1>
+                <p>About will be added soon.</p>
+            </Container>
+        </>
     );
 }
