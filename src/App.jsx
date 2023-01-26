@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { Navbar } from './components'
 import { Home, Login, Register, AddNote, ViewNote } from './pages'
-import PrivateRoutes from './components/PrivateRouter'
-import CheckUser from './components/CheckUser'
+import PrivateRoutes from './Routes/PrivateRouter';
+import CheckUser from './Routes/CheckUser';
 
 const App = () => {
   return (
