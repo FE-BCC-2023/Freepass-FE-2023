@@ -9,8 +9,8 @@ const RegisterForm = () => {
     const [errMsg, setErrMsg] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             const response = await fetch("http://localhost:5000/auth/register", {
                 method: "POST",
@@ -40,7 +40,7 @@ const RegisterForm = () => {
                     type="name"
                     value={name}
                     placeholder="Masukan Email"
-                    onChange={(event) => setName(event.target.value)}
+                    onChange={(e) => setName(e.target.value)}
                     required
                     className="rounded-full py-5 lg:py-4 px-5 bg-blue-50"
                 />
@@ -51,7 +51,7 @@ const RegisterForm = () => {
                     type="email"
                     value={email}
                     placeholder="Masukan Email"
-                    onChange={(event) => setEmail(event.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                     className="rounded-full py-5 lg:py-4 px-5 bg-blue-50"
                 />
@@ -62,7 +62,7 @@ const RegisterForm = () => {
                     type="password"
                     value={password}
                     placeholder="Masukan Password"
-                    onChange={(event) => setPassword(event.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="rounded-full py-5 lg:py-4 px-5 bg-blue-50"
                 />
                 {errMsg && <p className="text-red-500 text-lg mt-4 mx-auto">{errMsg}</p>}
