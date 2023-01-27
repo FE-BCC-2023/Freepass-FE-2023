@@ -15,7 +15,7 @@ Please take a note this api didn't use real email, you can just use your fake em
 First you have to clone and install all the package used here.
 ```
 > git clone https://github.com/Minezee/Freepass-FE-2023.git
-> cd taskmate-api
+> cd Freepass-FE-2023
 > git checkout nauvalfahreza
 > npm i
 ```
