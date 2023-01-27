@@ -36,6 +36,7 @@ const TaskPage = () => {
             />
           ))}
         </div>
+
         {isEditingTask ? <TaskEdit /> : <Task />}
       </div>
     </div>
