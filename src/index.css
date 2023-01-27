@@ -41,6 +41,10 @@ code {
   padding-left: 4px;
   padding-right: 4px;
   padding-bottom: 0px;
-  background: white;
-  color: rgb(101, 100, 100);
+  /* border-width: 1px; */
+  border: 1px solid gray;
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+  /* background: transparent; */
+  /* color: gold; */
 }

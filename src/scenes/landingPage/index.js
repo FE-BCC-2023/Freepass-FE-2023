@@ -20,7 +20,9 @@ const LandingPage = () => {
     <div className="h-screen bg-purple-700 dark:bg-slate-600 w-screen p-8">
       <div className="bg-slate-200 dark:bg-slate-800 h-full rounded-3xl p-12 px-8 sm:px-20 text-xs sm:text-sm">
         <div className="flex justify-between items-center">
-          <div className="text-xl">Dashboard</div>
+          <div className="pl-24 text-3xl font-normal hidden sm:flex ">
+            Task Manager
+          </div>
           <div className="flex items-center">
             <button
               onClick={handleTheme}
@@ -68,13 +70,13 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-row-reverse py-12">
+        <div className="flex flex-row-reverse h-full">
           {isLoginPage ? (
-            <div className="bg-white  dark:bg-blue-800 rounded-3xl p-8 h-96 w-80 text-slate-800 dark:text-white">
+            <div className="bg-white  dark:bg-slate-600 rounded-3xl p-8 h-96 mt-12 w-full sm:w-4/12 text-slate-800 dark:text-white">
               <div className="text-xl mb-4">Welcome Back...</div>
               <div>
                 <form
-                  className="flex flex-col gap-2 text-slate-800"
+                  className="flex flex-col gap-2 dark:text-slate-100 text-slate-800"
                   onSubmit={login}
                 >
                   <div className="relative createInput mb-2">
@@ -84,9 +86,9 @@ const LandingPage = () => {
                       value={dataLogin.email}
                       required
                       name="email"
-                      className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                      className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute left-0 mt-3 ml-4 text-sm duration-300  text-gray-500 font-normal">
+                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300  text-gray-500 font-normal">
                       Email
                     </span>
                   </div>
@@ -97,9 +99,9 @@ const LandingPage = () => {
                       value={dataLogin.password}
                       required
                       name="password"
-                      className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                      className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
                       Password
                     </span>
                   </div>
@@ -116,7 +118,7 @@ const LandingPage = () => {
               </div>
             </div>
           ) : (
-            <div className="bg-white  dark:bg-slate-600 rounded-3xl p-8 h-96 w-80 dark:text-slate-100 text-slate-900">
+            <div className="bg-white  dark:bg-slate-600 rounded-3xl p-8 h-96 mt-12 w-full sm:w-4/12 dark:text-slate-100 text-slate-900">
               <div className="text-xl mb-4">Come Join</div>
               <div>
                 <form
@@ -131,9 +133,9 @@ const LandingPage = () => {
                         value={dataRegister.firstName}
                         required
                         name="firstName"
-                        className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                        className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         First Name
                       </span>
                     </div>
@@ -144,9 +146,9 @@ const LandingPage = () => {
                         value={dataRegister.lastName}
                         required
                         name="lastName"
-                        className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                        className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         Last Name
                       </span>
                     </div>
@@ -158,9 +160,9 @@ const LandingPage = () => {
                       value={dataRegister.email}
                       required
                       name="email"
-                      className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                      className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
                       Email
                     </span>
                   </div>
@@ -171,9 +173,9 @@ const LandingPage = () => {
                       value={dataRegister.password}
                       required
                       name="password"
-                      className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                      className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
                       Password
                     </span>
                   </div>
@@ -185,9 +187,9 @@ const LandingPage = () => {
                         value={dataRegister.location}
                         required
                         name="location"
-                        className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                        className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         Location
                       </span>
                     </div>
@@ -198,9 +200,9 @@ const LandingPage = () => {
                         value={dataRegister.occupation}
                         required
                         name="occupation"
-                        className="relative focus:outline-none h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
+                        className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         Occupation
                       </span>
                     </div>
@@ -217,6 +219,29 @@ const LandingPage = () => {
               </div>
             </div>
           )}
+          <div className="hidden sm:flex  w-8/12 relative">
+            <div className="bg-red-200 absolute top-0 left-32 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
+              <div className="h-8 bg-white"></div>
+            </div>
+            <div className="bg-red-200 absolute left-64 top-20 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
+              <div className="h-8 bg-white"></div>
+            </div>
+            <div className="bg-red-200 absolute left-24 bottom-40 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
+              <div className="h-8 bg-white"></div>
+            </div>
+            <div className="bg-red-200 absolute right-24 bottom-40 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
+              <div className="h-8 bg-white"></div>
+            </div>
+            <div className="text-lg absolute bottom-12 left-0">
+              <div className="font-bold">
+                Organize your work and life, finally.
+              </div>
+              <div>
+                Become focused, organized, and calm with Task Manager. Add your
+                tasks. Organize your life. Achieve more every day.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

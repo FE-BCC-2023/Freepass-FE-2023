@@ -253,6 +253,7 @@ export const GlobalContext = (props) => {
     task.preventDefault();
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/note/editTask",
+
       {
         method: "PATCH",
         headers: {
@@ -308,7 +309,6 @@ export const GlobalContext = (props) => {
     setUserData({ user: loggedIn });
     setIsEditingProject(false);
   };
-
   const [hari, setHari] = useState([
     " Minggu",
     " Senin",
@@ -486,6 +486,8 @@ export const GlobalContext = (props) => {
       setToken(loggedIn.token);
       Cookies.set("token", loggedIn.token, { expires: 1 });
       Cookies.set("user", JSON.stringify(loggedIn.user), { expires: 1 });
+      setEditedTask({ ...editedTask, id: loggedIn.user._id });
+      setEditedProject({ ...editedProject, id: loggedIn.user._id });
       navigate("/dashboard");
     } else {
       setFailedLogin(loggedIn);
