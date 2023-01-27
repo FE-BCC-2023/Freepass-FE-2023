@@ -9,10 +9,10 @@ const RegisterForm = () => {
     const [errMsg, setErrMsg] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         try {
-            const response = await fetch("http://localhost:5000/auth/register", {
+            const response = await fetch("https://taskmates-api.vercel.app/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password, name }),
@@ -40,7 +40,7 @@ const RegisterForm = () => {
                     type="name"
                     value={name}
                     placeholder="Masukan Email"
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(event) => setName(event.target.value)}
                     required
                     className="rounded-full py-5 lg:py-4 px-5 bg-blue-50"
                 />
@@ -51,7 +51,7 @@ const RegisterForm = () => {
                     type="email"
                     value={email}
                     placeholder="Masukan Email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(event) => setEmail(event.target.value)}
                     required
                     className="rounded-full py-5 lg:py-4 px-5 bg-blue-50"
                 />
@@ -62,12 +62,12 @@ const RegisterForm = () => {
                     type="password"
                     value={password}
                     placeholder="Masukan Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(event) => setPassword(event.target.value)}
                     className="rounded-full py-5 lg:py-4 px-5 bg-blue-50"
                 />
                 {errMsg && <p className="text-red-500 text-lg mt-4 mx-auto">{errMsg}</p>}
             </div>
-            <div className="flex flex-col items-center justify-center gap-4">
+            <div className="flex flex-col items-center justify-center mt-8 gap-4">
                 <button type="submit" className="auth-button">Sign Up</button>
                 <p className="text-2xl lg:text-sm">sudah punya akun? <Link className="text-blue-400 underline hover:opacity-80" to={'/signin'}>buat akun</Link></p>
             </div>
