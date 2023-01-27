@@ -1,8 +1,10 @@
 # Taskmate
 This is [Taskmate](https://taskmate-bccfreepass.vercel.app/) (notes project), you can use it to create note, read note, update note, delete note (CRUD), before you use that feature you should log in
 
-you can use this account :
+**you can use this account :**
+
 email : user@mail.com
+
 pass : user
 
 or you can create your own account actually.
