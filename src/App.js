@@ -6,6 +6,7 @@ import { createContext, useState, useEffect } from "react";
 import LandingPage from "./scenes/landingPage";
 import Cookies from "js-cookie";
 import { GlobalContext } from "./GlobalContext";
+import NotFound from "./scenes/notFound";
 
 export const ThemeContext = createContext();
 export const StateManager = createContext();
@@ -32,6 +33,7 @@ function App() {
             <GlobalContext>
               <Routes>
                 <>
+                  <Route path="*" element={<NotFound />} />
                   <Route
                     path="/dashboard"
                     element={
