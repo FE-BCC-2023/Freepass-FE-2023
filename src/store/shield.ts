@@ -27,6 +27,7 @@ export interface ShiledProps {
 export const shield = writable<ShiledProps>({
   label: 'label',
   message: 'message',
+  color: '#0F80C1'
 })
 
 export const dynamic = writable(false);
