@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { notes } from "../assets";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaPlus } from 'react-icons/fa'
 import { NoteCard, NoteDummy, Header } from "../components";
 
@@ -9,7 +9,7 @@ const Home = () => {
     const [allNotes, setAllNotes] = useState(null);
 
     useEffect(() => {
-        fetch('https://taskmates-api.vercel.app/user/get_notes', {
+        fetch('https://taskmates-api.vercel.app/notes/get', {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
