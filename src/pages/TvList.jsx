@@ -100,7 +100,7 @@ function Trending() {
             }
             </div>
         </div>
-        <footer>
+        {/* <footer>
           <div className="brand">
             <img src={Logo} alt="" />
             <p>Rizz Movie List</p>
@@ -110,7 +110,7 @@ function Trending() {
             <a target='_blank' href="https://github.com/BlueFZ/"><img src={Git} /></a>
             <a target='_blank' href="https://www.linkedin.com/in/muhammad-syafi-513588241/"><img src={Lk} /></a>
           </div>
-        </footer>
+        </footer> */}
       </>
     )}
    </>
