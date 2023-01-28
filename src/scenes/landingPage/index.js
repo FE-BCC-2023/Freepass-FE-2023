@@ -297,12 +297,11 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="text-lg absolute bottom-12 left-0">
-              <div className="font-bold">
-                Organize your work and life, finally.
-              </div>
+              <div className="font-bold">Atur tugas dan kehidupanmu.</div>
               <div>
-                Become focused, organized, and calm with Task Manager. Add your
-                tasks. Organize your life. Achieve more every day.
+                Menjadi fokus, terorganisir, dan tenang dengan Task Manager.
+                Tambahkan tugasmu. Atur hidupmu. Berkembang lebih banyak setiap
+                hari.
               </div>
             </div>
           </div>
