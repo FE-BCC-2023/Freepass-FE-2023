@@ -6,6 +6,7 @@ import ViewNote from "./ViewNote"
 import Favorite from "./Favorite"
 import Todo from "./Todo"
 import Error from "./Error"
+import NotFound from "./NotFound"
 
 export {
     Home,
@@ -16,4 +17,5 @@ export {
     Favorite,
     Todo,
     Error,
+    NotFound,
 }
