@@ -188,7 +188,7 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="sm:pl-4 sm:w-7/12">
+      <div className="sm:pl-4 mt-8 sm:mt-0 sm:w-7/12">
         <div className="mb-4 w-full">
           <div className=" flex flex-row items-center justify-between">
             <Link to="/project" className="text-semibold">

@@ -17,10 +17,10 @@ const LandingPage = () => {
     login,
   } = useContext(GlobalProvider);
   return (
-    <div className="h-screen bg-purple-700 dark:bg-slate-600 w-screen p-8">
+    <div className="h-screen bg-purple-400 dark:bg-slate-600 w-screen p-4 md:p-8">
       <div className="bg-slate-200 dark:bg-slate-800 h-full rounded-3xl p-12 px-8 sm:px-20 text-xs sm:text-sm">
         <div className="flex justify-between items-center">
-          <div className="pl-24 text-3xl font-normal hidden sm:flex ">
+          <div className="md:pl-24 pl-4 md:text-3xl text-xl font-normal ">
             Task Manager
           </div>
           <div className="flex items-center">
@@ -56,7 +56,7 @@ const LandingPage = () => {
               onClick={() => {
                 setIsLoginPage(true);
               }}
-              className=" mr-4 rounded-lg hover:scale-110 duration-300 shadow-md dark:bg-purple-700 bg-purple-400 px-3 p-2"
+              className=" mr-4 rounded-lg hover:scale-110 text-white duration-300 shadow-md dark:bg-purple-700 bg-purple-500 px-3 p-2"
             >
               Sign In
             </button>
@@ -64,7 +64,7 @@ const LandingPage = () => {
               onClick={() => {
                 setIsLoginPage(false);
               }}
-              className=" rounded-lg hover:scale-110 duration-300 shadow-md dark:bg-purple-700 bg-purple-400 px-3 p-2"
+              className=" rounded-lg hover:scale-110 text-white duration-300 shadow-md dark:bg-purple-700 bg-purple-500 px-3 p-2"
             >
               Sign Up
             </button>
@@ -72,8 +72,11 @@ const LandingPage = () => {
         </div>
         <div className="flex flex-row-reverse h-full">
           {isLoginPage ? (
-            <div className="bg-white  dark:bg-slate-600 rounded-3xl p-8 h-96 mt-12 w-full sm:w-4/12 text-slate-800 dark:text-white">
-              <div className="text-xl mb-4">Welcome Back...</div>
+            <div className="bg-white  dark:bg-slate-600 rounded-3xl p-8 py-6 h-96 mt-12 w-full my-auto md:w-4/12 text-slate-800 dark:text-white">
+              <div className="text-xl">Sign In</div>
+              <div className="mb-4 text-slate-400 text-xs">
+                Tugasmu udah kangen sama kamu
+              </div>
               <div>
                 <form
                   className="flex flex-col gap-2 dark:text-slate-100 text-slate-800"
@@ -109,24 +112,38 @@ const LandingPage = () => {
                   <div>
                     <button
                       type="submit"
-                      className=" hover:scale-110 duration-300 shadow-md bg-slate-200 p-3 px-4 text-slate-900 rounded-lg"
+                      className=" hover:scale-105 w-full duration-300 shadow-md bg-blue-500 text-white p-3 px-4 rounded-lg"
                     >
                       Sign In
+                    </button>
+                  </div>
+                  <div className="flex justify-center text-xs">
+                    <div className="text-slate-400">Kamu belum punya akun?</div>
+                    <button
+                      onClick={() => {
+                        setIsLoginPage(false);
+                      }}
+                      className="text-blue-500"
+                    >
+                      Sign Up
                     </button>
                   </div>
                 </form>
               </div>
             </div>
           ) : (
-            <div className="bg-white  dark:bg-slate-600 rounded-3xl p-8 h-96 mt-12 w-full sm:w-4/12 dark:text-slate-100 text-slate-900">
-              <div className="text-xl mb-4">Come Join</div>
+            <div className="bg-white z-50 dark:bg-slate-600 rounded-3xl p-8 py-6 h-96 mt-12 w-full md:w-4/12 dark:text-slate-100 text-slate-900">
+              <div className="text-xl ">Sign Up</div>
+              <div className="mb-4 text-slate-400 text-xs">
+                Apaaa?? Kamu belum ngatur tugasmu?
+              </div>
               <div>
                 <form
                   className="flex flex-col gap-2 dark:text-slate-100 text-slate-900"
                   onSubmit={register}
                 >
                   <div className="flex flex-row justify-between w-full gap-2">
-                    <div className="relative createInput mb-2">
+                    <div className="relative createInput mb-1">
                       <input
                         type="text"
                         onChange={handleInputRegister}
@@ -139,7 +156,7 @@ const LandingPage = () => {
                         First Name
                       </span>
                     </div>
-                    <div className="relative createInput mb-2">
+                    <div className="relative createInput mb-1">
                       <input
                         type="text"
                         onChange={handleInputRegister}
@@ -153,7 +170,7 @@ const LandingPage = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="relative createInput mb-2">
+                  <div className="relative createInput mb-1">
                     <input
                       type="text"
                       onChange={handleInputRegister}
@@ -166,7 +183,7 @@ const LandingPage = () => {
                       Email
                     </span>
                   </div>
-                  <div className="relative createInput mb-2">
+                  <div className="relative createInput mb-1">
                     <input
                       type="password"
                       onChange={handleInputRegister}
@@ -180,7 +197,7 @@ const LandingPage = () => {
                     </span>
                   </div>
                   <div className="flex flex-row justify-between w-full gap-2">
-                    <div className="relative createInput mb-2">
+                    <div className="relative createInput mb-1">
                       <input
                         type="text"
                         onChange={handleInputRegister}
@@ -193,7 +210,7 @@ const LandingPage = () => {
                         Location
                       </span>
                     </div>
-                    <div className="relative createInput mb-2">
+                    <div className="relative createInput mb-1">
                       <input
                         type="text"
                         onChange={handleInputRegister}
@@ -210,27 +227,74 @@ const LandingPage = () => {
                   <div>
                     <button
                       type="submit"
-                      className=" hover:scale-110 duration-300 shadow-md bg-slate-200 p-3 px-4 text-slate-900 rounded-lg"
+                      className=" hover:scale-105 w-full duration-300 shadow-md bg-blue-500 p-3 px-4 text-slate-100 rounded-lg"
                     >
                       Sign Up
+                    </button>
+                  </div>
+                  <div className="flex justify-center text-xs">
+                    <div className="text-slate-400">Kamu udah punya akun?</div>
+                    <button
+                      onClick={() => {
+                        setIsLoginPage(true);
+                      }}
+                      className="text-blue-500"
+                    >
+                      Sign In
                     </button>
                   </div>
                 </form>
               </div>
             </div>
           )}
-          <div className="hidden sm:flex  w-8/12 relative">
-            <div className="bg-red-200 absolute top-0 left-32 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
-              <div className="h-8 bg-white"></div>
+          <div className="hidden md:flex w-8/12 relative">
+            <div className="bg-white dark:bg-pink-900 absolute top-0 left-20 overflow-hidden h-80 w-96 mt-12 rounded-xl">
+              <div className="h-8 bg-purple-400 px-4 gap-2 dark:bg-slate-400 flex flex-row items-center">
+                <div className="h-2 w-2 rounded-full bg-white"></div>
+                <div className="h-2 w-2 rounded-full bg-white"></div>
+                <div className="h-2 w-2 rounded-full bg-white"></div>
+              </div>
+              <div className="p-4 flex items-center justify-between">
+                <div className="font-bold text-lg">Dashboard</div>
+                <div className="flex items-center dark:text-slate-300 text-purple-400">
+                  Student
+                </div>
+              </div>
+              <div className="h-52 gap-4 flex flex-row px-4">
+                <div className="bg-slate-100 dark:bg-slate-600 p-2 flex flex-row gap-2 rounded-xl w-2/3">
+                  <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
+                  <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
+                </div>
+                <div className="w-1/3 flex gap-2 flex-col">
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
+                </div>
+              </div>
             </div>
-            <div className="bg-red-200 absolute left-64 top-20 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
-              <div className="h-8 bg-white"></div>
-            </div>
-            <div className="bg-red-200 absolute left-24 bottom-40 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
-              <div className="h-8 bg-white"></div>
-            </div>
-            <div className="bg-red-200 absolute right-24 bottom-40 overflow-hidden h-40 w-64 mt-12 rounded-2xl">
-              <div className="h-8 bg-white"></div>
+            <div className="bg-white dark:bg-pink-900 absolute top-40 left-64 overflow-hidden h-48 w-72 mt-12 rounded-xl">
+              <div className="h-8 bg-purple-400 px-4 gap-2 dark:bg-slate-400 flex flex-row items-center">
+                <div className="h-2 w-2 rounded-full bg-white"></div>
+                <div className="h-2 w-2 rounded-full bg-white"></div>
+                <div className="h-2 w-2 rounded-full bg-white"></div>
+              </div>
+              <div className="p-4 flex items-center justify-between">
+                <div className="font-bold text-lg">Task</div>
+                <div className="flex items-center dark:text-slate-300 text-purple-400">
+                  Student
+                </div>
+              </div>
+              <div className="h-20 gap-4 flex flex-row px-4">
+                <div className="bg-slate-100 dark:bg-slate-600 p-2 flex flex-row gap-2 rounded-xl w-2/3">
+                  <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
+                  <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
+                </div>
+                <div className="w-1/3 flex gap-2 flex-col">
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
+                </div>
+              </div>
             </div>
             <div className="text-lg absolute bottom-12 left-0">
               <div className="font-bold">

@@ -9,10 +9,12 @@ const TaskPage = () => {
   const { userData, isSidebarFull, deleteTask, editingTask, isEditingTask } =
     useContext(GlobalProvider);
   return (
-    <div className="flex flex-row noScrollbar ">
+    <div className="flex flex-row noScrollbar">
       <Sidebar />
       <div
-        className={`flex duration-300 flex-col bg-slate-100 pb-32 gap-1 dark:bg-slate-900 sm:pr-4 pt-4
+        className={`flex duration-300 flex-col bg-slate-100 ${
+          userData.user.data.tasks.length === 0 ? "pb-96" : "pb-32"
+        } gap-1 dark:bg-slate-900 sm:pr-4 pt-4
         ${isSidebarFull ? " sm:pl-64" : " sm:pl-24"}
         pl-14
           w-screen`}
