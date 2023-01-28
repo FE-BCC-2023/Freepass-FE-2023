@@ -20,7 +20,7 @@ const LandingPage = () => {
     <div className="h-screen bg-purple-400 dark:bg-slate-600 w-screen p-4 md:p-8">
       <div className="bg-slate-200 dark:bg-slate-800 h-full rounded-3xl p-12 px-8 sm:px-20 text-xs sm:text-sm">
         <div className="flex justify-between items-center">
-          <div className="md:pl-24 pl-4 md:text-3xl text-xl font-normal ">
+          <div className="md:pl-8 pl-4 md:text-3xl text-xl font-normal ">
             Task Manager
           </div>
           <div className="flex items-center">
@@ -290,9 +290,8 @@ const LandingPage = () => {
                   <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
                 </div>
                 <div className="w-1/3 flex gap-2 flex-col">
-                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
-                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
-                  <div className="bg-slate-100 dark:bg-slate-600 h-1/3 rounded-xl"></div>
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/2 rounded-xl"></div>
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/2 rounded-xl"></div>
                 </div>
               </div>
             </div>
