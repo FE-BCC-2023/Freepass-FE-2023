@@ -1,30 +1,77 @@
-# Taskmate
-This is [Taskmate](https://taskmate-bccfreepass.vercel.app/) (notes project), you can use it to create note, read note, update note, delete note (CRUD), before you use that feature you should log in
+# Frontend Instant Pass Challenge
 
-**you can use this account :**
+## :love_letter: Freepass Invitation
 
-email : user@mail.com
+Hello everyone, we are from Front End department BCC 2023 are holding an open recruitment for all of you who want to be part of the FE department through a free pass challenge. To pass this free pass selection, you must complete one of the following challenges properly according to the requested criteria (Web/Multi Platform).
 
-pass : user
+## :star::computer: Challenge (Web)
 
-or you can create your own account actually.
+Make a web application by implementing the features below:
 
-Please take a note this api didn't use real email, you can just use your fake email, but the data will be saved on database.
+- Implement Framework/Library
+- Implement API Fetch (POST/GET/DELETE/PUT)
+- Implementasi State Management
+- Create a Responsive Visual
+- The design of the Application does not have to be its own design, You may take references from the internet
 
-# Clone Project
-First you have to clone and install all the package used here.
-```
-> git clone https://github.com/Minezee/Freepass-FE-2023.git
-> cd Freepass-FE-2023
-> git checkout nauvalfahreza
-> npm i
-```
+## :star::iphone: Challenge (Multi Platform - Flutter)
 
-# Run Project
-After you clone the project you can run the project :
-```
-> npm run dev
-```
+Buatlah a Mobile application by implementing the features below:
 
-# Disclaimer
-This is my first full stack project, sorry if the server is running a bit slow in the background because i haven't explore much about back end and focusing on front end.
+- Application should perform CRUD operations (Create, Read, Update, Delete).
+- Implement Local Storage.
+- Implement State Management.
+- Implement API Fetch.
+- Implement App Testing.
+- The design of the Application does not have to be its own design, You may take references from the internet
+
+## :100: Bonus Point Advice
+
+You can also apply the suggestions below to earn bonus points:
+
+- Web
+
+  - Add Error Handling.
+  - Add Animation.
+  - Delpoy website and can be accessed by public.
+  - Implement Modern State Management (Redux)
+
+- Multi Platform - Flutter
+  - Add Error Handling.
+  - Add Animation.
+  - Add responsive display.
+
+## :blue_book: References
+
+You might be overwhelmed by these requirements. Don't worry, let's see all the equipment you need down below:
+
+1. [Public API](https://github.com/public-apis/public-apis)
+2. Web Hosting Services
+   - [Vercel](https://vercel.com/)
+   - [Netlify](https://www.netlify.com/)
+3. [Dribbble](https://dribbble.com/)
+
+## :school_satchel: Task
+
+1. Fork this repository
+2. Follow the project [Convention](CONVENTION.md)
+3. Finish all requirements
+4. Submit your work
+
+## :warning: Warning
+
+Challenges submitted **must be your own work**. Code obtained from other sources (websites, books, forums, GitHub, etc.) should **only be used for reference**.
+
+## :question: Question
+
+Do you have any questions related to this challenge?? Feel free to contact us via [WhatsApp](wa.me/6281319696671)
+
+## :gift: Submission
+
+Please follow the instructions on the [Submission guide](CONTRIBUTING.md). Make sure submit before January 31, 2023 23.59 WIB ✨
+
+![good_luck](https://media.giphy.com/media/3gM9hmQeWBLVXXrxvJ/giphy-downsized-large.gif)
+
+> **This is _not_ the only way to join us.**
+>
+> **Good Luck!**
