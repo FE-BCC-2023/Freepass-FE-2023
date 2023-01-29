@@ -88,8 +88,8 @@ const Register = () => {
     const token = localStorage.token;
     if (token) return <Navigate to={'/account'} />
     return (
-        <div className="flex flex-row w-screen h-screen my-auto lg:h-auto">
-            <img src={loginBg} alt="" className="w-3/5 h-screen hidden lg:block" />
+        <div className="flex flex-row w-full my-auto lg:h-auto">
+            <img src={loginBg} alt="image" className="w-3/5 h-screen hidden lg:block" />
             <RegisterForm />
         </div>
     );
