@@ -12,8 +12,8 @@
   shield.subscribe(setUrl)
 </script>
 
-<h2 class="text-center font-bold mb-1">Result</h2>
-<div class="pb-6 lg:pb-12 pt-4" style="background-color:{$shield.color};">
+<div class="relative pb-6 lg:pb-12 pt-4" style="background-color:{$shield.color};">
+  <h2 class="absolute -top-6 w-full text-center font-bold">Result</h2>
   <div class="container flex flex-col items-center mx-auto">
     <Shield />
     <Code />
