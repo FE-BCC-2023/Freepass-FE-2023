@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { shield } from "../../store/shield";
-  import { staticShieldUrl } from "../../utils/SheildGenerator";
+  import { shield, dynamic } from "../../store/shield";
+  import { getShieldUrl } from "../../utils/SheildGenerator";
   import Icon from "@iconify/svelte";
     import { colorLightness } from "../../utils/ColorLightness";
 
@@ -12,7 +12,7 @@
 
   function generateHtml(alt: string, url: string, to: string) {
     const base = `<img alt="${alt}" src="${url}">`;
-    if (to) return `<a href="${to}">\n\t${base}\n</a>`;
+    if (to) return `<a href="${to}">\n  ${base}\n</a>`;
     return base;
   }
 
@@ -32,8 +32,8 @@
   }
 
   $: generatedCode = lang === 'md' 
-      ? generateMd($shield.message, staticShieldUrl($shield), useLink && link) 
-      : generateHtml($shield.message, staticShieldUrl($shield), useLink && link);
+      ? generateMd($shield.message, getShieldUrl($shield, $dynamic), useLink && link) 
+      : generateHtml($shield.message, getShieldUrl($shield, $dynamic), useLink && link);
 </script>
 
 <div>

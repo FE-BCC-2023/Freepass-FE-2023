@@ -1,10 +1,9 @@
 <script>
   import { shield } from "../../store/shield";
-  import { colorLightness } from "../../utils/ColorLightness";
   import { staticShieldUrl } from "../../utils/SheildGenerator";
   import { debounce } from "lodash";
   import Shield from "./Shield.svelte";
-    import Code from "./Code.svelte";
+  import Code from "./Code.svelte";
 
   let url = ''
   const setUrl = debounce(() => url = staticShieldUrl($shield), 500);

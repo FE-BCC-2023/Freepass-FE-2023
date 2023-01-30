@@ -12,8 +12,8 @@
     <div class="editable px-2" contenteditable bind:textContent={$shield.message} />
   {:else}
     <div class="editable pl-2 border-r" contenteditable bind:textContent={$shield.dynamic.prefix} />
-    <div class:opacity-70={!$shield.dynamic.message}>
-      {$shield.dynamic.message || 'message'}
+    <div class:opacity-70={!$shield.dynamic.query}>
+      {$shield.dynamic.query || 'query'}
     </div>
     <div class="editable pr-2 border-l" contenteditable bind:textContent={$shield.dynamic.suffix} />
   {/if}

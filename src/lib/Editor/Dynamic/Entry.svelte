@@ -7,11 +7,6 @@
 
   const isDataArray = isArray(data);
   const getPath = (path: string) => isDataArray ? `${base}[${path}]` : `${base}.${path}`;
-
-  function setQueryMessage(query: string, message: string){
-    $shield.dynamic.query = query;
-    $shield.dynamic.message = message;
-  }
 </script>
 
 {#each entries(data) as [key, val], idx (getPath(key))}
@@ -24,7 +19,7 @@
     <pre class="w-fit {$shield.dynamic.query === getPath(key) ? 'border border-white': ''}"><button 
       class="hover:underline decoration-white underline-offset-2
             {$shield.dynamic.query === getPath(key) ? 'bg-yellow-300 text-black': 'text-yellow-300'}"
-      on:click={() => setQueryMessage(getPath(key), val)}
+      on:click={() => $shield.dynamic.query = getPath(key)}
     >{key}</button>: {val}</pre>
   {/if}
 {/each}

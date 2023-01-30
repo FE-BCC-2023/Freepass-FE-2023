@@ -9,9 +9,26 @@ export function staticShieldUrl(props: ShiledProps) {
   const url = new URL('https://img.shields.io/badge/' + baseProps.join('-'));
   assignQuery(url, 'logo', props.logo);
   assignQuery(url, 'style', props.style);
-  assignQuery(url, 'logo', props.logo);
   return url.toString();
 }
+
+export function dynamicShieldUrl(props: ShiledProps) {
+  const url = new URL('https://img.shields.io/badge/dynamic/json');
+  assignQuery(url, 'label', props.label);
+  assignQuery(url, 'color', props.color);
+  assignQuery(url, 'logo', props.logo);
+  assignQuery(url, 'style', props.style);
+  assignQuery(url, 'url', props.dynamic.url);
+  assignQuery(url, 'query', props.dynamic.query);
+  assignQuery(url, 'prefix', props.dynamic.prefix);
+  assignQuery(url, 'suffix', props.dynamic.suffix);
+  return url.toString();
+}
+
+export const getShieldUrl = 
+  (props: ShiledProps, dynamic = false) => dynamic 
+  ? dynamicShieldUrl(props) 
+  : staticShieldUrl(props)
 
 const omitEmpty = (str: string) => str || '';
 const assignQuery = 
