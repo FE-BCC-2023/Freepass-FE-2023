@@ -1,14 +1,14 @@
 <script>
-  import { shield } from "../../store/shield";
-  import { staticShieldUrl } from "../../utils/SheildGenerator";
-  import { debounce } from "lodash";
-  import Shield from "./Shield.svelte";
-  import Code from "./Code.svelte";
+  import { shield } from '../../store/shield';
+  import { staticShieldUrl } from '../../utils/SheildGenerator';
+  import { debounce } from 'lodash';
+  import Shield from './Shield.svelte';
+  import Code from './Code.svelte';
 
-  let url = ''
-  const setUrl = debounce(() => url = staticShieldUrl($shield), 500);
+  let url = '';
+  const setUrl = debounce(() => (url = staticShieldUrl($shield)), 500);
 
-  shield.subscribe(setUrl)
+  shield.subscribe(setUrl);
 </script>
 
 <div class="relative pb-6 lg:pb-12 pt-4" style="background-color:{$shield.color};">

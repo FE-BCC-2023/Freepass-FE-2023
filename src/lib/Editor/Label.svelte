@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { shield } from "../../store/shield";
+  import { shield } from '../../store/shield';
 
   let edit = false;
   let iconLink = '';
@@ -11,21 +11,24 @@
   }
 </script>
 
-<div class="wrapper flex items-center bg-gray-800 text-white px-2 outline-1 outline-black" class:outline={edit}>
-  {#if iconValid && $shield.logo} 
-    <img 
+<div
+  class="wrapper flex items-center bg-gray-800 text-white px-2 outline-1 outline-black"
+  class:outline={edit}
+>
+  {#if iconValid && $shield.logo}
+    <img
       class="h-4"
       class:mr-1={iconValid}
-      alt={$shield.logo} 
+      alt={$shield.logo}
       src={iconLink}
-      on:error={() => iconValid = false}
+      on:error={() => (iconValid = false)}
     />
   {/if}
-  <div 
+  <div
     contenteditable
     class="outline-none"
     bind:textContent={$shield.label}
-    on:focusin={() => edit = true}
-    on:focusout={() => edit = false}>
-  </div>
+    on:focusin={() => (edit = true)}
+    on:focusout={() => (edit = false)}
+  />
 </div>

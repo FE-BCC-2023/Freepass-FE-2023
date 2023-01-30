@@ -1,11 +1,11 @@
-import type { ShiledProps } from "../store/shield";
+import type { ShiledProps } from '../store/shield';
 
 export function staticShieldUrl(props: ShiledProps) {
   const baseProps = [
     omitEmpty(props.label),
     omitEmpty(props.message),
-    omitEmpty(props.color.split('#')[1])
-  ]
+    omitEmpty(props.color.split('#')[1]),
+  ];
   const url = new URL('https://img.shields.io/badge/' + baseProps.join('-'));
   assignQuery(url, 'logo', props.logo);
   assignQuery(url, 'style', props.style);
@@ -25,11 +25,9 @@ export function dynamicShieldUrl(props: ShiledProps) {
   return url.toString();
 }
 
-export const getShieldUrl = 
-  (props: ShiledProps, dynamic = false) => dynamic 
-  ? dynamicShieldUrl(props) 
-  : staticShieldUrl(props)
+export const getShieldUrl = (props: ShiledProps, dynamic = false) =>
+  dynamic ? dynamicShieldUrl(props) : staticShieldUrl(props);
 
 const omitEmpty = (str: string) => str || '';
-const assignQuery = 
-  (url: URL, query: string, value: string) => value && url.searchParams.set(query, value);
+const assignQuery = (url: URL, query: string, value: string) =>
+  value && url.searchParams.set(query, value);

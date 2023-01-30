@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { dynamic, shield } from "../../store/shield";
-  import { colorLightness } from "../../utils/ColorLightness";
+  import { dynamic, shield } from '../../store/shield';
+  import { colorLightness } from '../../utils/ColorLightness';
 </script>
 
 <div
-  class:text-white={colorLightness($shield.color) > 0.5} 
-  class="flex" 
+  class:text-white={colorLightness($shield.color) > 0.5}
+  class="flex"
   style="background-color:{$shield.color};"
 >
   {#if !$dynamic}

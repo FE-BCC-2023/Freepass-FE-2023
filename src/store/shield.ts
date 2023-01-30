@@ -1,12 +1,6 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-export const ShieldStyle = [
-  'flat',
-  'flat-square',
-  'for-the-badge',
-  'plastic',
-  'social',
-]
+export const ShieldStyle = ['flat', 'flat-square', 'for-the-badge', 'plastic', 'social'];
 
 export interface DynamicShieldProps {
   url: string;
@@ -34,8 +28,8 @@ export const shield = writable<ShiledProps>({
     url: 'https://api.quotable.io/random',
     query: '$.content',
     prefix: '',
-    suffix: ''
-  }
-})
+    suffix: '',
+  },
+});
 
 export const dynamic = writable(false);
