@@ -33,8 +33,10 @@ export default function Navbar() {
 		<div
 			id="navbar"
 			className={` ${
-				navbarFixed ? "fixed left-0 right-0 top-0 bg-blue-800" : "relative"
-			}  bg-white h-[15vh] flex items-center z-50 transition-colors duration-300`}
+				navbarFixed
+					? "bg-blue-800 fixed left-0 right-0 top-0 "
+					: "relative bg-white"
+			}   h-[15vh] flex items-center z-50 transition-colors duration-300`}
 		>
 			{sidebarActive && (
 				<div
