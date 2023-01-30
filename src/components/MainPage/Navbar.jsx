@@ -33,7 +33,7 @@ export default function Navbar() {
 		<div
 			id="navbar"
 			className={` ${
-				navbarFixed ? "fixed left-0 right-0 top-0 bg-blue-600" : "relative"
+				navbarFixed ? "fixed left-0 right-0 top-0 bg-blue-800" : "relative"
 			}  bg-white h-[15vh] flex items-center z-50 transition-colors duration-300`}
 		>
 			{sidebarActive && (
@@ -73,7 +73,7 @@ export default function Navbar() {
 						</div>
 						<ul
 							className={`mt-16 md:mt-0 md:flex  md:w-80 justify-between ${
-								navbarFixed ? "bg-blue-600" : "bg-white"
+								navbarFixed ? "bg-blue-800" : "bg-white"
 							} transition-colors duration-300`}
 						>
 							{["About", "Contact", "My Quiz"].map((el, i) => {
