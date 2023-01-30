@@ -1,13 +1,27 @@
 <script lang="ts">
+  import Icon from "@iconify/svelte";
   import { shield } from "../../../store/shield";
+
+  let url = $shield.dynamic.url;
+
+  function changeUrl() {
+    $shield.dynamic.url = url;
+    $shield.dynamic.query = '';
+  }
 </script>
 
-<label>
-  <span class="block text-sm font-bold mb-1">Endpoint url:</span>
+<span class="block text-sm font-bold mb-1">Endpoint url:</span>
+<form 
+  on:submit|preventDefault={changeUrl}
+  class="flex items-center"
+>
   <input 
     class="w-full border border-dashed border-black px-1 outline-none" 
     type="text" 
     placeholder="https://api.example.com" 
-    bind:value={$shield.dynamic.url}
+    bind:value={url}
   >
-</label>
+  <button type="submit" class="bg-gray-800 text-white text-xl h-full aspect-square">
+    <Icon class="mx-auto" icon="material-symbols:arrow-forward" />
+  </button>
+</form>

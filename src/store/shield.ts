@@ -9,6 +9,7 @@ export const ShieldStyle = [
 ]
 
 export interface DynamicShieldProps {
+  message?: string;
   url: string;
   query: string;
   prefix?: string;
@@ -31,6 +32,7 @@ export const shield = writable<ShiledProps>({
   logo: '',
   style: '',
   dynamic: {
+    message: '',
     url: '',
     query: '',
     prefix: '',
