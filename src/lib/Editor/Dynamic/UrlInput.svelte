@@ -7,6 +7,7 @@
   function changeUrl() {
     $shield.dynamic.url = url;
     $shield.dynamic.query = '';
+    $shield.dynamic.message = '';
   }
 </script>
 

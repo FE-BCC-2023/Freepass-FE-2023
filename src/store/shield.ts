@@ -27,7 +27,7 @@ export interface ShiledProps {
 
 export const shield = writable<ShiledProps>({
   label: 'label',
-  message: 'message',
+  message: 'edit me',
   color: '#0F80C1',
   logo: '',
   style: '',

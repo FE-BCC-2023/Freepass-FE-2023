@@ -1,12 +1,26 @@
 <script lang="ts">
-  import { shield } from "../../store/shield";
+  import { dynamic, shield } from "../../store/shield";
   import { colorLightness } from "../../utils/ColorLightness";
 </script>
 
-<div 
-  contenteditable 
+<div
   class:text-white={colorLightness($shield.color) > 0.5} 
-  class="px-2 focus:outline" 
+  class="flex" 
   style="background-color:{$shield.color};"
-  bind:textContent={$shield.message}>
+>
+  {#if !$dynamic}
+    <div class="editable px-2" contenteditable bind:textContent={$shield.message} />
+  {:else}
+    <div class="editable pl-2 border-r" contenteditable bind:textContent={$shield.dynamic.prefix} />
+    <div class:opacity-70={!$shield.dynamic.message}>
+      {$shield.dynamic.message || 'message'}
+    </div>
+    <div class="editable pr-2 border-l" contenteditable bind:textContent={$shield.dynamic.suffix} />
+  {/if}
 </div>
+
+<style lang="postcss">
+  .editable {
+    @apply focus:outline border-dashed border-white;
+  }
+</style>
