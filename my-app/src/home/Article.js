@@ -14,6 +14,7 @@ export default function Article() {
 
     useEffect(() => {
         setLoading(true);
+        
         getAllDataCoffee()
             .then(response => {
                 setCoffee(response);
@@ -25,7 +26,7 @@ export default function Article() {
                 setLoading(false);
             });
     }, []);
-
+    
     if (loading) return (
         <Loading />
     );
@@ -44,7 +45,7 @@ export default function Article() {
                                 <Card.Text style={{ height: '150px' }}>
                                     {item.description}
                                 </Card.Text>
-                                <Link to={`/article/${item.id}`} className='p-0'><Button style={{backgroundColor: 'var(--tertiary-color)'}}>Read More</Button></Link>
+                                <Link to={`/article/${item.id}`} className='p-0'><Button className='border-0' style={{backgroundColor: 'var(--tertiary-color)'}}>Read More</Button></Link>
                             </Card.Body>
                         </Card>
                     </div>

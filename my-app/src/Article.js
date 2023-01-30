@@ -62,10 +62,10 @@ export default function Article() {
                                 <Card.Img variant='top' src={article.image} style={{ height: '300px', objectFit: 'cover' }} />
                                 <Card.Body>
                                     <Card.Title>{article.title}</Card.Title>
-                                    <Card.Text style={{ height: '150px' }}>
+                                    <Card.Text style={{ height: '170px' }}>
                                         {article.description}
                                     </Card.Text>
-                                    <Link to={`/article/${article.id}`} className='p-0'><Button style={{backgroundColor: 'var(--tertiary-color)'}}>Read More</Button></Link>
+                                    <Link to={`/article/${article.id}`} className='p-0'><Button className='border-0 more' style={{backgroundColor: 'var(--tertiary-color)'}}>Read More</Button></Link>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -82,10 +82,10 @@ export default function Article() {
                             <Card.Img variant='top' src={article.image} style={{ height: '300px', objectFit: 'cover' }} />
                             <Card.Body>
                                 <Card.Title>{article.title}</Card.Title>
-                                <Card.Text style={{ height: '150px' }}>
+                                <Card.Text style={{ height: '170px' }}>
                                     {article.description}
                                 </Card.Text>
-                                <Link to={`/article/${article.id}`} className='p-0'><Button style={{backgroundColor: 'var(--tertiary-color)'}}>Read More</Button></Link>
+                                <Link to={`/article/${article.id}`} className='p-0'><Button className='border-0 more' style={{backgroundColor: 'var(--tertiary-color)'}}>Read More</Button></Link>
                             </Card.Body>
                         </Card>
                     </Col>

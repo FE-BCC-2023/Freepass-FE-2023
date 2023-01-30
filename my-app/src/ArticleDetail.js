@@ -36,15 +36,15 @@ export default function ArticleDetail() {
 
     return (
         <>
-            <Container className='pt-5'>
+            <Container className='pt-5 text-white'>
                 <Link to='/article' className='btn mt-4 p-0'><Button style={{backgroundColor: 'var(--tertiary-color)'}}>Back</Button></Link>
-                <Card className='flex-lg-row mt-4 shadow-lg rounded-5 '>
-                    <Card.Header className='m-4 col-lg-5 order-lg-1 m-auto rounded-0' style={{ backgroundColor: 'var(--quaternary-color)' }}>
-                        <h1 className='slide-in-right text-center text-lg-start text-white'>{ article.title }</h1>
+                <Card className='flex-lg-row mt-4 shadow-lg rounded-5' style={{backgroundColor: 'var(--quaternary-color)'}}>
+                    <Card.Header className='m-4 col-lg-5 order-lg-1 rounded-0 border-0' style={{backgroundColor: 'var(--quaternary-color)'}}>
+                        <h1 className='slide-in-right text-center text-lg-start'>{ article.title }</h1>
                         <Image src={ article.image } alt={ article.title } fluid />
                     </Card.Header>
                     <Card.Body className='m-4'>
-                        <Row>
+                        <Row style={{backgroundColor: 'var(--tertiary-color)'}} className='rounded-5 p-5'>
                             <Col>
                                 <h3>Description</h3>
                                 <p>{ article.description }</p>
