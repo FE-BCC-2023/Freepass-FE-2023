@@ -60,6 +60,11 @@
 
   .zoom-out:hover {
     transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .outline:hover {
+    outline: 2px solid var(--primary-color);
+    transition: all 0.2s ease-in-out;
   }
   

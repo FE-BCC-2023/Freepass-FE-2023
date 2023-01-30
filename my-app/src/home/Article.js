@@ -37,8 +37,8 @@ export default function Article() {
             <div className='row row-cols-1 row-cols-md-3 g-4 p-3'>
                 {coffee.slice(3, 6).map((item) => (
                     <div className='col' key={item.id}>
-                        <Card className='text-white shadow' style={{backgroundColor: 'var(--quaternary-color)'}}>
-                            <Card.Img className='zoom-out' variant="top" src={item.image} style={{ height:'300px', objectFit: 'cover' }} />
+                        <Card className='text-white shadow outline' style={{backgroundColor: 'var(--quaternary-color)'}}>
+                            <Card.Img className='' variant="top" src={item.image} style={{ height:'300px', objectFit: 'cover' }} />
                             <Card.Body>
                                 <Card.Title>{item.title}</Card.Title>
                                 <Card.Text style={{ height: '150px' }}>

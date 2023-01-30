@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Error from './components/Error';
 import Loading from './components/Loading';
 import { getAllDataCoffee } from './data/Coffee';
+import './assets/styles/animation.css';
 
 export default function Article() {
     const [search, setSearch] = useState('');
@@ -57,7 +58,7 @@ export default function Article() {
                 {search === "" ? 
                     currentPosts.map((article, index) => (
                         <Col key={index}>
-                            <Card className='rounded-2 shadow text-white' style={{backgroundColor: 'var(--quaternary-color)'}}>
+                            <Card className='rounded-2 shadow text-white outline' style={{backgroundColor: 'var(--quaternary-color)'}}>
                                 <Card.Img variant='top' src={article.image} style={{ height: '300px', objectFit: 'cover' }} />
                                 <Card.Body>
                                     <Card.Title>{article.title}</Card.Title>
@@ -77,7 +78,7 @@ export default function Article() {
                     return null;
                 }).map((article, index) => (
                     <Col key={index}>
-                        <Card className='rounded-2 shadow text-white' style={{backgroundColor: 'var(--quaternary-color)'}}>
+                        <Card className='rounded-2 shadow text-white outline' style={{backgroundColor: 'var(--quaternary-color)'}}>
                             <Card.Img variant='top' src={article.image} style={{ height: '300px', objectFit: 'cover' }} />
                             <Card.Body>
                                 <Card.Title>{article.title}</Card.Title>
