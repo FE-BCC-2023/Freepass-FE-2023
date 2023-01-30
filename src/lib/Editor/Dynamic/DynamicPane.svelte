@@ -3,7 +3,7 @@
   import UrlInput from "./UrlInput.svelte";
 </script>
 
-<div class="flex flex-col w-96">
+<div class="md:flex flex-col w-screen md:w-96">
   <UrlInput />
   <Grabber />
 </div>

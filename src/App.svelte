@@ -3,7 +3,7 @@
   import Result from "./lib/Preview/Result.svelte";
 </script>
 
-<div class="bg-gray-100 flex flex-col items-stretch justify-center min-h-screen max-h-screen">
+<div class="bg-gray-100 flex flex-col items-stretch min-h-screen max-h-screen">
   <Editor />
   <Result />
 </div>

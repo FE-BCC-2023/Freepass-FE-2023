@@ -24,11 +24,11 @@
   let timeout: NodeJS.Timeout;
   function copyGeneratedCode() {
     clearTimeout(timeout);
-    navigator.clipboard.writeText(generatedCode)
     copyWait = true;
     timeout = setTimeout(() => {
       copyWait = false;
     }, 3000);
+    navigator.clipboard.writeText(generatedCode)
   }
 
   $: generatedCode = lang === 'md' 
