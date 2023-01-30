@@ -13,7 +13,7 @@ const TaskPage = () => {
       <Sidebar />
       <div
         className={`flex duration-300 flex-col bg-slate-100 ${
-          userData.user.data.tasks.length === 0 ? "pb-96" : "pb-32"
+          userData.user.data.tasks.length === 0 ? "pb-96" : "pb-48"
         } gap-1 dark:bg-slate-900 sm:pr-4 pt-4
         ${isSidebarFull ? " sm:pl-64" : " sm:pl-24"}
         pl-14
@@ -38,8 +38,9 @@ const TaskPage = () => {
             />
           ))}
         </div>
-
-        {isEditingTask ? <TaskEdit /> : <Task />}
+        <div className={`${userData.user.data.tasks.length <= 1 && "pb-48"}`}>
+          {isEditingTask ? <TaskEdit /> : <Task />}
+        </div>
       </div>
     </div>
   );

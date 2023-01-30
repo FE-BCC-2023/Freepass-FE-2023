@@ -96,6 +96,7 @@ export const GlobalContext = (props) => {
   };
   const postTasks = async (values, onSubmitProps) => {
     values.preventDefault();
+    setIsLoading(true);
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/note/addTask",
       {
@@ -107,6 +108,7 @@ export const GlobalContext = (props) => {
         body: JSON.stringify({ id: userData?.user?._id, task }),
       }
     );
+    setIsLoading(false);
     setTask({
       title: "",
       note: "",
@@ -126,6 +128,7 @@ export const GlobalContext = (props) => {
     "hidden",
   ]);
   const deleteTask = async (values) => {
+    setIsLoading(true);
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/note/removeTask",
       {
@@ -140,6 +143,7 @@ export const GlobalContext = (props) => {
         }),
       }
     );
+    setIsLoading(false);
     const loggedIn = await loggedInResponse.json();
     setUserData({ user: loggedIn });
     Cookies.set("user", JSON.stringify(loggedIn), { expires: 1 });
@@ -251,6 +255,7 @@ export const GlobalContext = (props) => {
   };
   const editTask = async (task) => {
     task.preventDefault();
+    setIsLoading(true);
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/note/editTask",
 
@@ -263,6 +268,7 @@ export const GlobalContext = (props) => {
         body: JSON.stringify({ ...editedTask }),
       }
     );
+    setIsLoading(false);
     setEditedTask({
       id: userData?.user?._id,
       index: null,
@@ -282,6 +288,7 @@ export const GlobalContext = (props) => {
   };
   const editProject = async (task) => {
     task.preventDefault();
+    setIsLoading(true);
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/note/editProject",
       {
@@ -293,6 +300,7 @@ export const GlobalContext = (props) => {
         body: JSON.stringify({ ...editedProject }),
       }
     );
+    setIsLoading(false);
     setEditedProject({
       id: userData?.user?._id,
       index: null,
@@ -342,6 +350,7 @@ export const GlobalContext = (props) => {
   };
   const postProjects = async (values, onSubmitProps) => {
     values.preventDefault();
+    setIsLoading(true);
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/note/addproject",
       {
@@ -353,6 +362,7 @@ export const GlobalContext = (props) => {
         body: JSON.stringify({ id: userData?.user?._id, project }),
       }
     );
+    setIsLoading(false);
     setProject({
       name: "",
       desc: "",
@@ -365,6 +375,7 @@ export const GlobalContext = (props) => {
     Cookies.set("user", JSON.stringify(loggedIn), { expires: 1 });
   };
   const deleteProjects = async (values) => {
+    setIsLoading(true);
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/note/removeProject",
       {
@@ -379,8 +390,10 @@ export const GlobalContext = (props) => {
         }),
       }
     );
+    setIsLoading(false);
     const loggedIn = await loggedInResponse.json();
     setUserData({ user: loggedIn });
+    Cookies.set("user", JSON.stringify(loggedIn), { expires: 1 });
   };
   const handleEditIncrementProgress = () => {
     setEditedProject({
@@ -465,8 +478,10 @@ export const GlobalContext = (props) => {
       setDataRegister({ ...dataRegister, location: value });
     }
   };
+  const [isLoading, setIsLoading] = useState(false);
   const login = async (values, onSubmitProps) => {
     values.preventDefault();
+    setIsLoading(true);
     const loggedInResponse = await fetch(
       "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/auth/login",
       {
@@ -475,6 +490,7 @@ export const GlobalContext = (props) => {
         body: JSON.stringify(dataLogin),
       }
     );
+    setIsLoading(false);
     const loggedIn = await loggedInResponse.json();
     if (loggedIn.user) {
       setDataLogin({
@@ -497,7 +513,8 @@ export const GlobalContext = (props) => {
   const register = async (values, onSubmitProps) => {
     values.preventDefault();
     const savedUserResponse = await fetch(
-      "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/auth/register",
+      "http://localhost:3001/auth/register",
+      // "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/auth/register",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -525,10 +542,75 @@ export const GlobalContext = (props) => {
       setIsLoginPage(true);
     }
   };
+  const [currentReceiver, setCurrentReceiver] = useState({
+    id: null,
+    name: null,
+  });
+  const [currentChat, setCurrentChat] = useState([]);
+  const [allUser, setAllUser] = useState(null);
+  const chooseChat = async (e) => {
+    const userID1 = userData.user._id;
+    const userID2 = e.target.value;
+    const chat = await fetch(
+      "https://asdasdasd-ditobayu.vercel.app/users/getchat",
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userID1, userID2 }),
+      }
+    );
+    setCurrentReceiver({ id: userID2, name: e.target.name });
+    const savedChat = await chat.json();
+    setCurrentChat([...savedChat]);
+    setIsChatOpened(true);
+  };
+  const [chat, setChat] = useState("");
+  const handleInputChat = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+    if (name === "message") {
+      setChat(value);
+    }
+    console.log(chat);
+  };
+  const sendChat = async (e) => {
+    e.preventDefault();
+    const chatResponse = await fetch(
+      "https://asdasdasd-ditobayu.vercel.app/users/sendchat",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userID1: userData.user._id,
+          userID2: currentReceiver.id,
+          message: chat,
+        }),
+      }
+    );
+    const chatResponseJson = await chatResponse.json();
+    setCurrentChat([...currentChat, chatResponseJson]);
+    setChat("");
+  };
+  const [isChatOpened, setIsChatOpened] = useState(false);
   return (
     <GlobalProvider.Provider
       value={{
         handleTheme,
+        currentReceiver,
+        setCurrentReceiver,
+        currentChat,
+        setCurrentChat,
+        allUser,
+        setAllUser,
+        chooseChat,
+        chat,
+        setChat,
+        handleInputChat,
+        sendChat,
+        isChatOpened,
+        setIsChatOpened,
+        isLoading,
+        setIsLoading,
         failedLogin,
         setFailedLogin,
         handleEditDecrementProgress,

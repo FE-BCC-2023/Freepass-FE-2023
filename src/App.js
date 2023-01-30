@@ -7,6 +7,8 @@ import LandingPage from "./scenes/landingPage";
 import Cookies from "js-cookie";
 import { GlobalContext } from "./GlobalContext";
 import NotFound from "./scenes/notFound";
+import Profile from "./scenes/Profile";
+import Messages from "./scenes/Messages";
 
 export const ThemeContext = createContext();
 export const StateManager = createContext();
@@ -47,9 +49,21 @@ function App() {
                     }
                   />
                   <Route
+                    path="/profile"
+                    element={
+                      Cookies.get("token") ? <Profile /> : <Navigate to="/" />
+                    }
+                  />
+                  <Route
                     path="/task"
                     element={
                       Cookies.get("token") ? <TaskPage /> : <Navigate to="/" />
+                    }
+                  />
+                  <Route
+                    path="/messages"
+                    element={
+                      Cookies.get("token") ? <Messages /> : <Navigate to="/" />
                     }
                   />
                   <Route

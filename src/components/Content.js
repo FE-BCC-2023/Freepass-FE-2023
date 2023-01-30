@@ -206,7 +206,7 @@ const Content = () => {
                   <Link
                     key={i}
                     to="/project"
-                    className="hover:scale-105 duration-200 mt-2 bg-white dark:bg-slate-800 flex flex-col justify-between shadow-lg rounded-3xl h-full p-4 flex-1"
+                    className=" duration-200 mt-2 bg-white dark:bg-slate-800 flex flex-col justify-between shadow-md hover:shadow-lg rounded-3xl h-full p-4 flex-1"
                   >
                     <div className="flex flex-row ">
                       <div>{data.name}</div>

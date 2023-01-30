@@ -32,7 +32,7 @@ const BoxItem = (props) => {
                 "Pengingat : " +
                   props.reminder.once.slice(8, 10) +
                   " " +
-                  months[parseInt(props.reminder.once.slice(5, 7))] +
+                  months[parseInt(props.reminder.once.slice(5, 7)) - 1] +
                   " " +
                   props.reminder.once.slice(0, 4)}
               {props.reminder.once === "" && "Setiap hari "}

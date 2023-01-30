@@ -8,6 +8,7 @@ const EditProjectForm = () => {
     handleEditDecrementProgress,
     editedProject,
     editProject,
+    isLoading,
   } = useContext(GlobalProvider);
   return (
     <div id="projectEdit">
@@ -15,8 +16,25 @@ const EditProjectForm = () => {
         className="flex flex-col text-xs sm:text-sm text-slate-500 bg-white dark:bg-slate-800 p-4 sm:px-8 rounded-3xl shadow-lg dark:text-slate-100 "
         onSubmit={editProject}
       >
-        <div className="text-slate-900 dark:text-slate-100 text-lg font-bold">
-          Edit Project
+        <div className="text-slate-900 flex flex-row items-center dark:text-slate-100 text-lg font-bold">
+          <div>Edit Project</div>
+          {isLoading && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-clockwise"
+              viewBox="0 0 16 16"
+              className="animate-spin"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+              />
+              <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+            </svg>
+          )}
         </div>
         <div className="flex flex-col sm:gap-4 sm:flex-row">
           <div className="flex flex-col w-full">

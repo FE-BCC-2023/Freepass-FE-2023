@@ -15,6 +15,7 @@ const LandingPage = () => {
     handleTheme,
     failedLogin,
     login,
+    isLoading,
   } = useContext(GlobalProvider);
   return (
     <div className="h-screen bg-purple-400 dark:bg-slate-600 w-screen p-4 md:p-8">
@@ -56,7 +57,7 @@ const LandingPage = () => {
               onClick={() => {
                 setIsLoginPage(true);
               }}
-              className=" mr-4 rounded-lg hover:scale-110 text-white duration-300 shadow-md dark:bg-purple-700 bg-purple-500 px-3 p-2"
+              className=" mr-4 md:flex hidden rounded-lg hover:scale-110 text-white duration-300 shadow-md dark:bg-purple-700 bg-purple-500 px-3 p-2"
             >
               Sign In
             </button>
@@ -64,7 +65,7 @@ const LandingPage = () => {
               onClick={() => {
                 setIsLoginPage(false);
               }}
-              className=" rounded-lg hover:scale-110 text-white duration-300 shadow-md dark:bg-purple-700 bg-purple-500 px-3 p-2"
+              className=" md:flex hidden rounded-lg hover:scale-110 text-white duration-300 shadow-md dark:bg-purple-700 bg-purple-500 px-3 p-2"
             >
               Sign Up
             </button>
@@ -91,11 +92,11 @@ const LandingPage = () => {
                       name="email"
                       className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300  text-gray-500 font-normal">
+                    <span className="absolute bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300  text-gray-500 font-normal">
                       Email
                     </span>
                   </div>
-                  <div className="relative createInput mb-2">
+                  <div className="relative createInput">
                     <input
                       type="password"
                       onChange={handleInputLogin}
@@ -104,11 +105,34 @@ const LandingPage = () => {
                       name="password"
                       className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                    <span className="absolute bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300 text-gray-500 font-normal">
                       Password
                     </span>
                   </div>
-                  <div className="text-slate-700">{failedLogin?.msg}</div>
+                  {failedLogin?.msg && (
+                    <div className="text-slate-700">{failedLogin?.msg}</div>
+                  )}
+                  {isLoading && (
+                    <div className="flex flex-row items-center">
+                      <div className="text-slate-700">Loading...</div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-clockwise"
+                        viewBox="0 0 16 16"
+                        className="animate-spin"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+                        />
+                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                      </svg>
+                    </div>
+                  )}
+
                   <div>
                     <button
                       type="submit"
@@ -132,7 +156,7 @@ const LandingPage = () => {
               </div>
             </div>
           ) : (
-            <div className="bg-white z-50 dark:bg-slate-600 rounded-3xl p-8 py-6 h-96 mt-12 w-full md:w-4/12 dark:text-slate-100 text-slate-900">
+            <div className="bg-white z-50 dark:bg-slate-600 rounded-3xl px-8 lg:px-8 md:px-4 py-6 h-96 mt-12 w-full md:w-4/12 dark:text-slate-100 text-slate-900">
               <div className="text-xl ">Sign Up</div>
               <div className="mb-4 text-slate-400 text-xs">
                 Apaaa?? Kamu belum ngatur tugasmu?
@@ -152,7 +176,7 @@ const LandingPage = () => {
                         name="firstName"
                         className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute truncate bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         First Name
                       </span>
                     </div>
@@ -165,7 +189,7 @@ const LandingPage = () => {
                         name="lastName"
                         className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute truncate bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         Last Name
                       </span>
                     </div>
@@ -179,7 +203,7 @@ const LandingPage = () => {
                       name="email"
                       className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                    <span className="absolute bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300 text-gray-500 font-normal">
                       Email
                     </span>
                   </div>
@@ -192,7 +216,7 @@ const LandingPage = () => {
                       name="password"
                       className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                     />
-                    <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                    <span className="absolute bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300 text-gray-500 font-normal">
                       Password
                     </span>
                   </div>
@@ -206,7 +230,7 @@ const LandingPage = () => {
                         name="location"
                         className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         Location
                       </span>
                     </div>
@@ -219,7 +243,7 @@ const LandingPage = () => {
                         name="occupation"
                         className="relative focus:outline-none bg-transparent h-10 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 placeholder:font-semibold text-sm border border-gray-400 rounded-md py-1 px-4 w-full"
                       />
-                      <span className="absolute bg-white dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 ml-4 text-sm duration-300 text-gray-500 font-normal">
+                      <span className="absolute bg-white md:text-xs dark:bg-slate-600 dark:text-slate-100 left-0 mt-3 md:ml-2 lg:ml-4 ml-4 text-sm duration-300 text-gray-500 font-normal">
                         Occupation
                       </span>
                     </div>
@@ -248,7 +272,7 @@ const LandingPage = () => {
             </div>
           )}
           <div className="hidden md:flex w-8/12 relative">
-            <div className="bg-white dark:bg-pink-900 absolute top-0 left-20 overflow-hidden h-80 w-96 mt-12 rounded-xl">
+            <div className="floating bg-white dark:bg-pink-900 absolute top-0 left-8 lg:left-20 overflow-hidden h-1/2 w-8/12 lg:w-[400px] mt-12 rounded-xl">
               <div className="h-8 bg-purple-400 px-4 gap-2 dark:bg-slate-400 flex flex-row items-center">
                 <div className="h-2 w-2 rounded-full bg-white"></div>
                 <div className="h-2 w-2 rounded-full bg-white"></div>
@@ -260,7 +284,7 @@ const LandingPage = () => {
                   Student
                 </div>
               </div>
-              <div className="h-52 gap-4 flex flex-row px-4">
+              <div className="h-1/2 gap-4 flex flex-row px-4">
                 <div className="bg-slate-100 dark:bg-slate-600 p-2 flex flex-row gap-2 rounded-xl w-2/3">
                   <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
                   <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
@@ -272,26 +296,30 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-pink-900 absolute top-40 left-64 overflow-hidden h-48 w-72 mt-12 rounded-xl">
+            <div className="floating2 bg-white dark:bg-pink-900 absolute top-40 lg:top-40 left-36 lg:left-64 overflow-hidden h-2/6 w-1/2 mt-12 rounded-xl">
               <div className="h-8 bg-purple-400 px-4 gap-2 dark:bg-slate-400 flex flex-row items-center">
                 <div className="h-2 w-2 rounded-full bg-white"></div>
                 <div className="h-2 w-2 rounded-full bg-white"></div>
                 <div className="h-2 w-2 rounded-full bg-white"></div>
               </div>
-              <div className="p-4 flex items-center justify-between">
-                <div className="font-bold text-lg">Task</div>
-                <div className="flex items-center dark:text-slate-300 text-purple-400">
-                  Student
+              <div className="h-4/5 gap-4 flex flex-row p-4">
+                <div className="w-1/3 flex gap-2 flex-col">
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/2 rounded-xl"></div>
+                  <div className="bg-slate-100 dark:bg-slate-600 h-1/2 rounded-xl"></div>
                 </div>
-              </div>
-              <div className="h-20 gap-4 flex flex-row px-4">
                 <div className="bg-slate-100 dark:bg-slate-600 p-2 flex flex-row gap-2 rounded-xl w-2/3">
                   <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
                   <div className="h-full bg-white dark:bg-slate-500 w-1/2 rounded-xl"></div>
                 </div>
-                <div className="w-1/3 flex gap-2 flex-col">
-                  <div className="bg-slate-100 dark:bg-slate-600 h-1/2 rounded-xl"></div>
-                  <div className="bg-slate-100 dark:bg-slate-600 h-1/2 rounded-xl"></div>
+              </div>
+              <div className="bg-purple-400 hiding h-24 w-16 overflow-hidden rounded-full absolute left-24 -bottom-28">
+                <div className="w-full flex justify-between flex-row p-2 pt-8">
+                  <div className="flex justify-center items-center bg-white h-4 w-4 rounded-full">
+                    <div className="h-2 w-2 bg-slate-700 rounded-full"></div>
+                  </div>
+                  <div className="flex justify-center items-center bg-white h-4 w-4 rounded-full">
+                    <div className="h-2 w-2 bg-slate-700 rounded-full"></div>
+                  </div>
                 </div>
               </div>
             </div>
