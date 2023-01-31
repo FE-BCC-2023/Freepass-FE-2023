@@ -1,5 +1,7 @@
 # Frontend Instant Pass Challenge
 
+Please also read [README2](/README2.md)
+
 ## :love_letter: Freepass Invitation
 
 Hello everyone, we are from Front End department BCC 2023 are holding an open recruitment for all of you who want to be part of the FE department through a free pass challenge. To pass this free pass selection, you must complete one of the following challenges properly according to the requested criteria (Web/Multi Platform).
