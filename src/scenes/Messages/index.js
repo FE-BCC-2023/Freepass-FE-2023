@@ -96,7 +96,7 @@ const Messages = () => {
                     currentReceiver.id === val._id
                       ? "border-l-4 border-cyan-400 darkLborder-cyan-200 bg-gradient-to-r from-cyan-50 dark:from-cyan-600 to-cyan-100 dark:to-cyan-800"
                       : "bg-slate-50 dark:bg-slate-800 dark:border-slate-700 border-slate-300"
-                  }  duration-300 flex flex-row items-center w-full font-bold text-xs gap-2 p-2 border-b  mr-4`}
+                  }  duration-300 flex flex-row items-center w-full font-bold text-xs gap-2 p-2 border-b `}
                 >
                   <div className="pointer-events-none h-10 w-10 p-2 rounded-full flex justify-center items-center bg-white dark:bg-slate-800">
                     <svg
