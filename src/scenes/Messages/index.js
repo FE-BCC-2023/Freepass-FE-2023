@@ -30,7 +30,8 @@ const Messages = () => {
       setAllUser([...qwe2]);
     };
     fetchData();
-  });
+  }, [userData, setAllUser]);
+  console.log("qwe");
   return (
     <div className="flex flex-row h-screen">
       <Sidebar />
@@ -57,13 +58,13 @@ const Messages = () => {
                     name={val.firstName + " " + val.lastName}
                     className=""
                   >
-                    <div className="pointer-events-none h-10 w-10 p-2 mb-1 rounded-full flex justify-center items-center bg-white">
+                    <div className="pointer-events-none h-10 w-10 p-2 mb-1 rounded-full flex justify-center items-center bg-white dark:bg-slate-800">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
                         fill="#DADADA"
-                        className="bi bi-person-fill h-full w-full bg-white rounded-full pointer-events-none"
+                        className="bi bi-person-fill h-full w-full rounded-full pointer-events-none"
                         viewBox="0 0 16 16"
                         key={i}
                         value={val._id}
@@ -79,8 +80,8 @@ const Messages = () => {
                 ))}
             </div>
           </div>
-          <div className="bg-white dark:text-slate-100 rounded-2xl noScrollbar border border-slate-300 dark:bg-slate-700 dark:border-slate-600 overflow-y-scroll h-full my-4">
-            <div className="text-xl bg-slate-100 p-4 py-3 border-b  dark:bg-slate-600 border-slate-300">
+          <div className="bg-white dark:text-slate-100 rounded-2xl noScrollbar border border-slate-300 dark:bg-slate-800 dark:border-slate-600 overflow-y-scroll h-full my-4">
+            <div className="text-xl bg-slate-100 p-4 py-3 border-b dark:bg-slate-700 border-slate-300 dark:border-slate-600">
               Messages
             </div>
             {allUser
@@ -94,10 +95,10 @@ const Messages = () => {
                   className={`${
                     currentReceiver.id === val._id
                       ? "border-l-4 border-cyan-400 darkLborder-cyan-200 bg-gradient-to-r from-cyan-50 dark:from-cyan-600 to-cyan-100 dark:to-cyan-800"
-                      : "bg-slate-50 dark:bg-slate-700 dark:border-slate-600 border-slate-300"
+                      : "bg-slate-50 dark:bg-slate-800 dark:border-slate-700 border-slate-300"
                   }  duration-300 flex flex-row items-center w-full font-bold text-xs gap-2 p-2 border-b  mr-4`}
                 >
-                  <div className="pointer-events-none h-10 w-10 p-2 rounded-full flex justify-center items-center bg-white">
+                  <div className="pointer-events-none h-10 w-10 p-2 rounded-full flex justify-center items-center bg-white dark:bg-slate-800">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"

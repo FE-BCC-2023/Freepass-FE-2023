@@ -24,12 +24,11 @@ const NewProjectForm = () => {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrow-clockwise"
+              className="bi bi-arrow-clockwise animate-spin"
               viewBox="0 0 16 16"
-              className="animate-spin"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
               />
               <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
@@ -56,13 +55,13 @@ const NewProjectForm = () => {
                   className="flex items-center rounded-full bg-white dark:bg-slate-700 border border-slate-400 p-2 justify-center h-8 w-8 hover:scale-110 shadow-md duration-300"
                   onClick={handleDecrementProgress}
                 >
-                  -
+                  <div className="pointer-events-none">-</div>
                 </div>
                 <div
                   className="flex items-center rounded-full bg-white dark:bg-slate-700 border border-slate-400 p-2 justify-center h-8 w-8 hover:scale-110 shadow-md duration-300"
                   onClick={handleIncrementProgress}
                 >
-                  +
+                  <div className="pointer-events-none">+</div>
                 </div>
               </div>
             </div>

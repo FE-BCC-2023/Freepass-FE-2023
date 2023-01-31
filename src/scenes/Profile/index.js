@@ -1,24 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Sidebar from "../../components/Sidebar";
 import { GlobalProvider } from "../../GlobalContext";
 
 const Profile = () => {
-  const { userData, isSidebarFull, months, userToken } =
+  const { userData, isSidebarFull, months, setAllUser, allUser } =
     useContext(GlobalProvider);
-  console.log(userData);
-  const asd = async () => {
-    const loggedInResponse = await fetch("http://localhost:3001/posts", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: userToken,
-      },
-      // body: JSON.stringify({  }),
-    });
-
-    const loggedIn = await loggedInResponse.json();
-    console.log(loggedIn);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const qwe = await fetch(
+        "https://asdasdasd-ditobayu.vercel.app/users/alluser",
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const qwe2 = await qwe.json();
+      setAllUser([...qwe2]);
+    };
+    fetchData();
+  }, [userData, setAllUser]);
   return (
     <div className="flex flex-row h-screen">
       <Sidebar />
@@ -30,7 +30,7 @@ const Profile = () => {
       >
         <div className="flex flex-col w-full lg:w-7/12 pr-2">
           <div className="bg-gradient-to-r from-cyan-100 dark:from-cyan-800 to-blue-100 dark:to-blue-800 h-60 relative rounded-2xl">
-            <div className="bg-white absolute flex justify-center items-center -bottom-20 sm:-bottom-16 left-4 sm:left-8 rounded-full sm:scale-100 scale-75 h-36 w-36">
+            <div className="bg-white dark:bg-slate-800 p-4 absolute flex justify-center items-center -bottom-12 sm:-bottom-16 left-4 sm:left-8 rounded-full h-24 sm:h-36 w-24 sm:w-36 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -45,7 +45,7 @@ const Profile = () => {
           </div>
           <div className="flex flex-row-reverse mt-2">
             <button
-              onClick={asd}
+              disabled
               className="p-2 px-3 rounded-full border border-slate-200"
             >
               Edit profil
@@ -107,7 +107,36 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="lg:flex hidden w-5/12 h-48"></div>
+        <div className="lg:flex hidden w-5/12 h-full">
+          <div className="bg-slate-50 dark:bg-slate-900 border-slate-300 border dark:border-slate-700 w-full rounded-3xl overflow-y-scroll noScrollbar flex flex-col shadow-md h-full">
+            <div className="p-4 text-lg font-bold pb-2"> Pengguna Lainnya</div>
+            {allUser
+              ?.filter((val) => val._id !== userData.user._id)
+              .map((val, i) => (
+                <div
+                  key={i}
+                  className={`
+                    duration-300 flex flex-row items-center w-full font-bold text-xs gap-2 p-2 mr-4 border-t border-slate-300 dark:border-slate-700`}
+                >
+                  <div className="pointer-events-none h-16 w-16 p-2 rounded-full flex justify-center items-center bg-white dark:bg-slate-800">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="#DADADA"
+                      className="bi bi-person-fill h-full w-full pointer-events-none "
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-col pointer-events-none ">
+                    {val.firstName + " " + val.lastName}
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );

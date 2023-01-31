@@ -143,6 +143,10 @@ const Content = () => {
       });
     }
   });
+  const progress = [];
+  projects.forEach((val) => {
+    progress.push("w-[" + val.progress * 8 + "%]");
+  });
   return (
     <div className="h-full w-full bg-transparent dark:bg-slate-900 flex flex-col sm:flex-row flex-wrap pr-4">
       <div className="sm:w-5/12 flex sm:flex-col flex-col-reverse">
@@ -214,9 +218,7 @@ const Content = () => {
                     <div className="text-xs flex flex-col gap-1 justify-between">
                       <div className="border flex shadow-md border-slate-300 h-2 rounded-full">
                         <div
-                          className={`bg-slate-600 dark:bg-slate-300 rounded-full ${
-                            "w-" + data.progress + "/12"
-                          }`}
+                          className={`bg-slate-600 dark:bg-slate-300 rounded-full ${progress[i]}`}
                         ></div>
                       </div>
                       <div className="flex flex-col-reverse">
@@ -253,9 +255,9 @@ const Content = () => {
               >
                 {"<"}
               </button>
-              <Link to="/task">
+              <div>
                 {months[currentMonth]} {currentYear}
-              </Link>
+              </div>
               <button
                 className="shadow-md rounded-full p-2 flex justify-center items-center h-8 w-8 border font-bold border-slate-200"
                 onClick={monthToggle}
