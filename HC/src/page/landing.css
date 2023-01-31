@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+
+.landing-page {
+  height: 100vh;
+  background: #eef2fb;
+}
+.custom-shape-divider-top-1675088070 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  animation: appearTop 2s ease-out;
+}
+@keyframes appearTop {
+  from {
+    top: -20px;
+  }
+  to {
+    top: 0;
+  }
+}
+.custom-shape-divider-top-1675088070 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 148px;
+  transform: rotateY(180deg);
+}
+.custom-shape-divider-top-1675088070 .shape-fill {
+  fill: #0e3490;
+}
+.landing-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 7em;
+  align-items: center;
+  animation: appear 2s ease-out;
+}
+@keyframes appear {
+  from {
+    top: 20px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.logo {
+  width: 8%;
+}
+.web-name {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  color: #2d3656;
+  font-family: oswald;
+  font-weight: 600;
+  font-size: 3em;
+}
+.web-name:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+.web-name:hover:after {
+  width: 100%;
+  background: #0e3490;
+}
+.started {
+  background: #0e3490;
+  color: #eef2fb;
+  text-decoration: none;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: 500ms;
+}
+.right-arrow {
+  font-size: 1.2em;
+  position: relative;
+  top: 4px;
+  left: .2em;
+}
+.started:hover {
+  transform: translateY(-5px);
+  background: #0078d7;
+}
+.custom-shape-divider-bottom-1675088230 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  animation: appearBottom 2s ease-out;
+}
+@keyframes appearBottom {
+  from {
+    bottom: -20px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+.custom-shape-divider-bottom-1675088230 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 148px;
+  transform: rotateY(180deg);
+}
+.custom-shape-divider-bottom-1675088230 .shape-fill {
+  fill: #0e3490;
+}
+@media screen and (max-width: 1059px) {
+  .landing-main{
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+  }
+  .logo{
+    width: 6em;
+  }
+  .web-name{
+    font-size: 3.5em;
+  }
+  .started{
+    padding: 1em 2.6em;
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .logo{
+    width: 6em;
+  }
+  .web-name{
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 305px) {
+  .started{
+    padding: .6em 1.2em;
+    font-size: 1.3em;
+  }
+}
+@media screen and (min-height: 1000px) {
+  .landing-main{
+    gap: 7em;
+  }
+  .logo{
+    width: 12em;
+  }
+  .web-name{
+    font-size: 4em;
+  }
+  .started{
+    padding: 1em 2.6em;
+    font-size: 1.7em;
+  }
+}

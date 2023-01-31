@@ -1,0 +1,11 @@
+.not-found{
+    height: 100vh;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    background: #eef2fb;
+}
+.anouncement{
+    font-size: 1.5em;
+    color: #0e3490;
+}
