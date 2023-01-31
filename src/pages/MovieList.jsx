@@ -75,24 +75,32 @@ function MovieList() {
               </li>
               <li
               onClick={() => {
-                setPage(1)
-                setLoad(true)
+
+                if (page !== 1) {
+                  setPage(1)
+                  setLoad(true)
+                } else return 0
+                
               }}
               >
                 Page 1              
               </li>
               <li
               onClick={() => {
-                setPage(2)
-                setLoad(true)
+                if (page !== 2) {
+                  setPage(2)
+                  setLoad(true)
+                } else return 0
               }}
               >
                 Page 2
               </li>
               <li
               onClick={() => {
-                setPage(3)
-                setLoad(true)
+                if (page !== 3) {
+                  setPage(3)
+                  setLoad(true)
+                } else return 0
               }}
               >
                 Page 3
