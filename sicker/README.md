@@ -1,7 +1,7 @@
 # sicker
 
 Simple app to make and share whatsapp sticker
-probably not compatible in android 12
+\nprobably not compatible in android 12
 
 ## Getting Started
 
