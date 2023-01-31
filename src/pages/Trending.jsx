@@ -40,7 +40,6 @@ function Trending() {
     axios.get(`https://api.themoviedb.org/3/trending/all/${time}?api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
       setList(movies.data.results)
       setTimeout(() => setLoad(false), 1000)
-      console.log(movies.data.results)
     })
   }, [time])
 
