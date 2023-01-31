@@ -29,8 +29,8 @@ function MovieList() {
 
   function getData() {
     axios.get(`https://api.themoviedb.org/4/list/1?page=${page}&api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
-      setTimeout(() => setLoad(false), 1000)
       setList(movies.data.results)
+      setLoad(false)
     })
   }
 
@@ -124,7 +124,7 @@ function MovieList() {
                 }
                 return (
                   
-                 <div className='card'>
+                 <div key={movie.id} className='card'>
                   <img className='thumbnail' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
                   <p className='info'>
                       <span>⭐ {movie.vote_average}</span> <span>📅 {movie.release_date}</span> <span>👁️ {movie.popularity}</span>
