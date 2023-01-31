@@ -34,7 +34,7 @@ function Homepage() {
       </div>
       </div>
       <div id='list' className="content">
-        <h2>Our Lists</h2>
+        <h2 className='list-txt'>Our Lists</h2>
         <div className="card-container">
           <div className="card">
             <h3>Movies</h3>
