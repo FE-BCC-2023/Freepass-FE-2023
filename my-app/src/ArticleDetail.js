@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Image, Card, Col, Row, Button } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
+import { getDataCoffeeById } from './data/Coffee';
 import Error from './components/Error';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
-import { getDataCoffeeById } from './data/Coffee';
 import './assets/styles/animation.css';
 import './assets/styles/style.css';
 
