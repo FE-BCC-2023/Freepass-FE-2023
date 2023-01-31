@@ -1,0 +1,11 @@
+.fixed-top {
+    transition: all 0.2s ease-in-out;
+}
+
+.fixed-top.hidden {
+    transform: translateY(-100%);
+}
+
+.fixed-top.visible {
+    transform: translateY(0);
+}
