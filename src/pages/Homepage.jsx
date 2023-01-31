@@ -2,7 +2,6 @@ import React from 'react'
 import '../styles/home.css'
 import Anim from '../../public/animate.png'
 import Movie from '../../public/movie.png'
-import Tv from '../../public/tv.png'
 import Trend from '../../public/trend.png'
 import Ig from '../../public/instagram.svg'
 import Git from '../../public/github.svg'
@@ -49,22 +48,6 @@ function Homepage() {
               <Link to='/movie'>
                 <button className='btn-movie'>
                   <p className='btn-txt'>Movie Lists</p>
-                </button>
-              </Link>
-            </div>
-          </div>
-          <div className="card">
-            <h3>TV Shows</h3>
-            <img src={Tv} />
-            <div className='txt-movie-container'>
-              <p className='card-desc'>
-                Here we Provide you with our movie lists based on our data base. Cli ck the button below to check out our movie lists.
-              </p>
-            </div>
-            <div className="btn-movie-container">
-              <Link to='/tv'>
-                <button className='btn-movie'>
-                  <p className='btn-txt'>TV Show Lists</p>
                 </button>
               </Link>
             </div>

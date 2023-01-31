@@ -13,19 +13,16 @@ function Trending() {
   const [time, setTime]= useState('day')
   const [expand, setExpand]= useState(0)
   const [clicked, setClicked]= useState(false)
-  const [detail, setDetail]= useState('Show more')
 
   function getExpanded(id) {
 
     if(clicked === true) {
       setClicked(false)
       setExpand(0)
-      // if(id == expand) setDetail('Show more')
     }
     else {
       setClicked(true)
       setExpand(id)
-      // if (expand == 0) setDetail('Show less')
     }
   }
 
@@ -73,16 +70,20 @@ function Trending() {
               </li>
               <li
               onClick={() => {
-                setTime('day')
-                setLoad(true)
+                if (time !== 'day') {
+                  setTime('day')
+                  setLoad(true)
+                } else return 0
               }}
               >
                 Day     
               </li>
               <li
               onClick={() => {
-                setTime('week')
-                setLoad(true)
+                if (time !== 'week') {
+                  setTime('week')
+                  setLoad(true)
+                } else return 0
               }}
               >
                 Week
@@ -106,7 +107,7 @@ function Trending() {
                     onClick={() => {
                       getExpanded(show.id)
                     }}
-                    >{detail}</button>
+                    >{show.id === expand ? 'Show less' : 'Show more'}</button>
                     {
                       expand === show.id &&
                       (

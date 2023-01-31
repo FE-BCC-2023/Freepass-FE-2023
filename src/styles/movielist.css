@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-image: none;
+  max-height: 100vh;
 }
 
 html, body {

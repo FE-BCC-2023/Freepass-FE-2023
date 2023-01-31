@@ -208,7 +208,7 @@ footer {
 }
 
 .brand img {
-  max-width: 10%;
+  max-width: 20%;
   object-fit: contain;
 }
 
@@ -280,6 +280,11 @@ footer {
 
   .kontak {
     margin-top: 10px;
+  }
+
+  .brand img {
+    max-width: 5%;
+    object-fit: contain;
   }
 }
 

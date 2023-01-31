@@ -13,7 +13,6 @@ function MovieList() {
   const [page, setPage]= useState(1)
   const [expand, setExpand]= useState(0)
   const [clicked, setClicked]= useState(false)
-  const [detail, setDetail]= useState('Show more')
   const [load, setLoad]= useState(true)
 
   function getExpanded(id) {
