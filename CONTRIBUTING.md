@@ -15,7 +15,7 @@ Here's how to submit a Pull Request (PR):
 4. Make changes, commit them, and push the branch to your repository fork.
 5. [Submit a pull request][pull-req] to the main branch.
 6. Please leave your identity such as name and NIM in your Pull Request
-7. After submit Pull Request, please fill your identity at this [form](https://bit.ly/PendaftaranFreepassBCC). We will contact you ASAP for the interview session
+7. After submit Pull Request, please fill your identity at this [form](https://bit.ly/PendaftaranFreepassBCC2023). We will contact you ASAP for the interview session
 
 [fork]: https://help.github.com/articles/fork-a-repo
 
