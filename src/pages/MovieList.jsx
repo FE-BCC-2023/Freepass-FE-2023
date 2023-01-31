@@ -29,8 +29,8 @@ function MovieList() {
 
   function getData() {
     axios.get(`https://api.themoviedb.org/4/list/1?page=${page}&api_key=9e89dc1810e00461d6f59011e04175ed`).then((movies) => {
-      setTimeout(() => setLoad(false), 1000)
       setList(movies.data.results)
+      setLoad(false)
     })
   }
 
