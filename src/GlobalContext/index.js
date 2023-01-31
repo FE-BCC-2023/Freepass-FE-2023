@@ -513,8 +513,7 @@ export const GlobalContext = (props) => {
   const register = async (values, onSubmitProps) => {
     values.preventDefault();
     const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
-      // "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/auth/register",
+      "https://asdasdasd-blgmkqiko-ditobayu.vercel.app/auth/register",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
