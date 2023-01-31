@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-[url("/background.svg")];
+	}
+}
+.skeleton {
+	animation: skeleton-animate 1s linear infinite alternate;
+}
+@keyframes skeleton-animate {
+	0% {
+		background-color: hsl(200, 20%, 70%);
+	}
+	100% {
+		background-color: hsl(200, 20%, 95%);
+	}
+}
+.active-choice {
+	@apply shadow-none bg-sky-600 text-white;
+}
