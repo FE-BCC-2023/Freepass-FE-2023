@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:sicker/controllers/sticker_maker_controller.dart';
+import 'package:sicker/controllers/stickers_controller.dart';
 import 'package:sicker/utils.dart';
 
 class MakeStickerScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class MakeStickerScreen extends StatelessWidget {
   StickerMakerController stickerMakerController =
       Get.put(StickerMakerController());
   final _nameEditingController = TextEditingController().obs;
+  StickersController stickersController = Get.arguments['stickersController'];
 
   bool checkTrayImagePath(String path) {
     if (path == 'assets/images/defaultTray.jpg') return true;
@@ -108,8 +110,9 @@ class MakeStickerScreen extends StatelessWidget {
                               EasyLoading.show(status: 'loading');
                               bool isSuccess = await stickerMakerController
                                   .uploadStickerPack(Get.arguments['username']);
-
                               if (isSuccess) {
+                                await stickersController.loadListSticker();
+                                await stickersController.loadUserStickerPack();
                                 EasyLoading.showSuccess(
                                     'success upload sticker');
                                 Get.back();

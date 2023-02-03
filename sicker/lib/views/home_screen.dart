@@ -107,8 +107,10 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(20),
                             child: FloatingActionButton(
                               onPressed: () {
-                                Get.toNamed(Routes.makeSticker,
-                                    arguments: {'username': acc.username});
+                                Get.toNamed(Routes.makeSticker, arguments: {
+                                  'username': acc.username,
+                                  'stickersController': stickersController
+                                });
                               },
                               backgroundColor: Utils.secondaryColor,
                               focusElevation: 0,
