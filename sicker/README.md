@@ -1,6 +1,6 @@
 # sicker
 
-A new Flutter project.
+Simple app to make and share whatsapp sticken. Probably not compatible in android 12
 
 ## Getting Started
 
