@@ -24,7 +24,7 @@ The API is completly free and easy to use without using tokens or any authentica
 - **React form hook** : Form validation 
 - **React Router** : Routing
 ## Author 
-Instagram : https://instagram.com/putu_arrtha
+Instagram : https://instagram.com/putu_arrtha  
 Twitter : @BhanuarthaArya
 ## How To Run
 You can clone or download this repository. Make sure you are on the correct project root path. Run this project using command **npm run dev** on your terminal. The default local server url would be http://127.0.0.1:5173/
