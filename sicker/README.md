@@ -1,6 +1,6 @@
 # sicker
 
-Simple app to make and share whatsapp sticken. Probably not compatible in android 12
+Simple app to make and share whatsapp sticken. Probably not compatible on miui version 13
 
 ## Getting Started
 
