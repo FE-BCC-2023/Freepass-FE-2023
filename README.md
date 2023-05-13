@@ -1,77 +1,37 @@
 # Frontend Instant Pass Challenge
 
-## :love_letter: Freepass Invitation
-
-Hello everyone, we are from Front End department BCC 2023 are holding an open recruitment for all of you who want to be part of the FE department through a free pass challenge. To pass this free pass selection, you must complete one of the following challenges properly according to the requested criteria (Web/Multi Platform).
-
-## :star::computer: Challenge (Web)
-
-Make a web application by implementing the features below:
-
-- Implement Framework/Library
-- Implement API Fetch (POST/GET/DELETE/PUT)
-- Implementasi State Management
-- Create a Responsive Visual
-- The design of the Application does not have to be its own design, You may take references from the internet
-
-## :star::iphone: Challenge (Multi Platform - Flutter)
-
-Buatlah a Mobile application by implementing the features below:
-
-- Application should perform CRUD operations (Create, Read, Update, Delete).
-- Implement Local Storage.
-- Implement State Management.
-- Implement API Fetch.
-- Implement App Testing.
-- The design of the Application does not have to be its own design, You may take references from the internet
-
-## :100: Bonus Point Advice
-
-You can also apply the suggestions below to earn bonus points:
-
-- Web
-
-  - Add Error Handling.
-  - Add Animation.
-  - Delpoy website and can be accessed by public.
-  - Implement Modern State Management (Redux)
-
-- Multi Platform - Flutter
-  - Add Error Handling.
-  - Add Animation.
-  - Add responsive display.
-
-## :blue_book: References
-
-You might be overwhelmed by these requirements. Don't worry, let's see all the equipment you need down below:
-
-1. [Public API](https://github.com/public-apis/public-apis)
-2. Web Hosting Services
-   - [Vercel](https://vercel.com/)
-   - [Netlify](https://www.netlify.com/)
-3. [Dribbble](https://dribbble.com/)
-
-## :school_satchel: Task
-
-1. Fork this repository
-2. Follow the project [Convention](CONVENTION.md)
-3. Finish all requirements
-4. Submit your work
-
-## :warning: Warning
-
-Challenges submitted **must be your own work**. Code obtained from other sources (websites, books, forums, GitHub, etc.) should **only be used for reference**.
-
-## :question: Question
-
-Do you have any questions related to this challenge?? Feel free to contact us via [WhatsApp](wa.me/6281319696671)
-
-## :gift: Submission
-
-Please follow the instructions on the [Submission guide](CONTRIBUTING.md). Make sure submit before January 31, 2023 23.59 WIB ✨
-
-![good_luck](https://media.giphy.com/media/3gM9hmQeWBLVXXrxvJ/giphy-downsized-large.gif)
-
-> **This is _not_ the only way to join us.**
->
-> **Good Luck!**
+## Intro
+This project was made for completing frontend challenge by FILKOM BCC Community. For further information you can check challenge brief in the master project of this forked repository.
+## About 
+This is a responsive multiple choice quiz application using public API, build with javascript library and css frameworks. There are four pages in this application:   
+- ### Main page  
+  Will be root path of application, use simple animation
+- ### Form page
+  This form filled with user data and quiz meta data such as category, language, quiz timer, and number of questions. This form already include with validation
+- ### Quiz page 
+  This page is the core of application. It runs after fetch an API from server and will be submitted automatically if the time is up. All states such as answered questions and time will be maintained using session storage via javascript API,so it doesn't refresh main states after browser if refreshed.
+- ### Result page
+  This page will show the user result, with total overall score, total answered, not answered, and false answer.
+#### API :  
+https://the-trivia-api.com/  
+The API is completly free and easy to use without using tokens or any authentication.
+## Build with 
+- **React js** : Javascript library
+- **Tailwind css** : CSS utility frameworks
+- **Daisy UI** : Tailwind UI Kit
+- **Swiper.js** : Library js for building slider
+- **Loading io** : Preloader
+- **React form hook** : Form validation 
+- **React Router** : Routing
+## Author 
+Instagram : https://instagram.com/putu_arrtha  
+Twitter : @BhanuarthaArya
+## How To Run
+```
+npm install && npm run dev
+```  
+You can clone or download this repository. Make sure you are on the correct project root path. This project use vite module bundler.
+Run this project using command npm run dev on your terminal. The default local server url would be http://127.0.0.1:5173/
+## Suggestions
+I would be glad and greatfull if you can leave some suggestions for my project  
+# Thank You !!!
