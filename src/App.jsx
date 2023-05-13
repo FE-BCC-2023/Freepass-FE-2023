@@ -13,7 +13,7 @@ function App() {
 	const [isBioForm, setIsBioForm] = useState(true);
 	return (
 		<AppContext.Provider value={{ isBioForm, setIsBioForm }}>
-			<div id="App">
+			<div id="App" className="overflow-x-hidden">
 				<Routes>
 					<Route
 						path="/"
